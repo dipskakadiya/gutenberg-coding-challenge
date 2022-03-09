@@ -20,6 +20,11 @@ import { getEmojiFlag } from './utils';
 import Preview from './preview';
 import './editor.scss';
 
+const options = Object.keys( countries ).map( ( code ) => ( {
+	value: code,
+	label: getEmojiFlag( code ) + '  ' + countries[ code ] + ' — ' + code,
+} ) );
+
 /**
  * Block Edit
  *
@@ -37,11 +42,6 @@ export default function Edit( props ) {
 		attributes: { countryCode, relatedPosts },
 		setAttributes,
 	} = props;
-
-	const options = Object.keys( countries ).map( ( code ) => ( {
-		value: code,
-		label: getEmojiFlag( code ) + '  ' + countries[ code ] + ' — ' + code,
-	} ) );
 
 	const handleChangeCountry = () => {
 		setAttributes( {
