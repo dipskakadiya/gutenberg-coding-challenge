@@ -20,7 +20,7 @@ export default function Save( { attributes } ) {
 	const { align } = attributes;
 
 	const wrapperClasses =
-		align !== '' || align !== false ? 'align' + align : '';
+		align !== '' && align !== false ? 'align' + align : '';
 
 	return (
 		<div { ...useBlockProps.save( { className: wrapperClasses } ) }>
