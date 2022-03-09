@@ -11,6 +11,15 @@ import continentNames from '../assets/continent-names.json';
 import continents from '../assets/continents.json';
 import { getEmojiFlag } from './utils';
 
+/**
+ * Block Preview
+ *
+ * @param {Object} attributes              Attributes.
+ * @param {string} attributes.countryCode  Country Code.
+ * @param {Array}  attributes.relatedPosts Related posts array.
+ *
+ * @return {JSX.Element} Block Preview element.
+ */
 export default function Preview( { countryCode, relatedPosts } ) {
 	if ( ! countryCode ) return null;
 

@@ -20,6 +20,18 @@ import { getEmojiFlag } from './utils';
 import Preview from './preview';
 import './editor.scss';
 
+/**
+ * Block Edit
+ *
+ * @param {Object}   props                         Props.
+ * @param {Object}   props.attributes              Attributes.
+ * @param {Function} props.setAttributes           Set attributes.
+ * @param {string}   props.attributes.align        alignment.
+ * @param {string}   props.attributes.countryCode  Country Code.
+ * @param {Array}    props.attributes.relatedPosts Related posts array.
+ *
+ * @return {JSX.Element} Block element.
+ */
 export default function Edit( props ) {
 	const {
 		attributes: { countryCode, relatedPosts },
@@ -53,7 +65,7 @@ export default function Edit( props ) {
 		async function getRelatedPosts() {
 			const postId = window.location.href.match( /post=([\d]+)/ )[ 1 ];
 			const response = await window.fetch(
-				`/wp-json/wp/v2/posts?search=${ countries[ countryCode ] }&exclude=${ postId }`
+				`/wp-json/wp/v2/posts?search=${ countries[ countryCode ] }&exclude=${ postId }&_fields=title,link,excerpt`
 			);
 
 			if ( ! response.ok )
