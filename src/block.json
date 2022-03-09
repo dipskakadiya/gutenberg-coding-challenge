@@ -11,6 +11,10 @@
 		"align": true
 	},
 	"attributes": {
+		"align": {
+			"type": "string",
+			"default": false
+		},
 		"countryCode": {
 			"type": "string",
 			"source": "html",
