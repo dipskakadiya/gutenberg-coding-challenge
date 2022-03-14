@@ -11,6 +11,10 @@
 		"align": true
 	},
 	"attributes": {
+		"align": {
+			"type": "string",
+			"default": false
+		},
 		"countryCode": {
 			"type": "string",
 			"source": "html",
@@ -23,23 +27,23 @@
 			"query": {
 				"title": {
 					"type": "string",
-					"selector": ".title",
+					"selector": ".xwp-country-card__title",
 					"source": "text"
 				},
 				"excerpt": {
 					"type": "string",
-					"selector": ".excerpt",
+					"selector": ".xwp-country-card__excerpt",
 					"source": "text"
 				},
 				"link": {
 					"type": "string",
-					"selector": ".link",
+					"selector": ".xwp-country-card__link",
 					"source": "attribute",
 					"attribute": "href"
 				},
 				"id": {
 					"type": "string",
-					"selector": ".link",
+					"selector": ".xwp-country-card__link",
 					"source": "attribute",
 					"attribute": "data-post-id"
 				}
