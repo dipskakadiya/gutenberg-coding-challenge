@@ -63,14 +63,14 @@ export default function Preview( { countryCode, relatedPosts } ) {
 						{ relatedPosts.map( ( relatedPost, index ) => (
 							<li key={ index } className="related-post">
 								<a
-									className="link"
+									className="xwp-country-card__link"
 									href={ relatedPost.link }
 									data-post-id={ relatedPost.id }
 								>
-									<h3 className="title">
+									<h3 className="xwp-country-card__title">
 										{ relatedPost.title }
 									</h3>
-									<p className="excerpt">
+									<p className="xwp-country-card__excerpt">
 										{ relatedPost.excerpt }
 									</p>
 								</a>
